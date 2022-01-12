@@ -1,0 +1,12 @@
+.box-space{
+    margin: 20px;
+    padding: 10px;
+    border: 2px deepskyblue solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.image{
+    width: 300px;
+}
