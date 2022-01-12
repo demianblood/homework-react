@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
+
 import './posts.css'
 import {getPosts} from "../../service/jsonService";
 import Post from "../Post/Post";
 
 const Posts = () => {
-    let [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
     useEffect(() => {
         getPosts().then(value => setPosts(value.data))
     }, [])

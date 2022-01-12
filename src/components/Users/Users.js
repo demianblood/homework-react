@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
+
 import './users.css'
 import {getUsers} from "../../service/jsonService";
 import User from "../User/User";
 
 const Users = () => {
-    let [users, setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
     useEffect(() => {
         getUsers().then(value => setUsers(value.data));
     }, [])
