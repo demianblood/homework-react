@@ -1,0 +1,16 @@
+hr{
+    margin: 0;
+}
+.car{
+    display: flex;
+    justify-content: space-around;
+    background: deepskyblue;
+}
+.btnBox{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    margin: 10px;
+    background: orange;
+}

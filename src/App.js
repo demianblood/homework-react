@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Form from "./components/Form/Form";
+import Cars from "./components/Cars/Cars";
+import UpdatedForm from "./components/Form/UpdatedForm";
+import css from "./App.module.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    let [trigger, setTrigger] = useState(null);
+    let [updateCar, setUpdateCar] = useState(null)
+
+    const createNewCar = data => {
+        setTrigger(data)
+    }
+    const updateCarById = data => {
+        setUpdateCar(data)
+    }
+    return (
+        <>
+            <div className={css.forms}>
+                <Form update={createNewCar}/>
+                <UpdatedForm updateCarById={updateCarById}/>
+            </div>
+            <Cars trigger={trigger} updateCar={updateCar}/>
+        </>
+    );
+};
 
 export default App;

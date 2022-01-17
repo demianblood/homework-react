@@ -1,0 +1,9 @@
+import React from 'react';
+import axios from "axios";
+import baseURL from "../configs/urls";
+
+const axiosService = axios.create({
+    baseURL
+});
+
+export default axiosService
