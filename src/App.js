@@ -8,9 +8,11 @@ const App = () => {
     const [trigger, setTrigger] = useState(null);
     const createNewCar = data => {
         setTrigger(data)
-
     }
-    const updateCar = data=>{
+    const updateCar = data => {
+        setTrigger(data)
+    }
+    const delTrigger = data => {
         setTrigger(data)
     }
     return (
@@ -19,7 +21,7 @@ const App = () => {
                 <Form createNewCar={createNewCar}/>
                 <UpdatedForm updateCar={updateCar}/>
             </div>
-            <Cars trigger={trigger}/>
+            <Cars trigger={trigger} delTrigger={delTrigger}/>
         </>
     );
 };

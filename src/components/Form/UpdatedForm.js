@@ -5,6 +5,7 @@ import {CarValidator} from "../../validators/CarValidator";
 import {carService} from "../../services/carService";
 
 const UpdatedForm = ({updateCar}) => {
+
     const {register, handleSubmit, formState: {errors}}
         = useForm({resolver: joiResolver(CarValidator), mode: 'onTouched'});
 

@@ -1,11 +1,19 @@
 import css from "./Car.module.css"
 import {carService} from "../../services/carService";
 
-const Car = ({car}) => {
+const Car = ({car, delTrigger}) => {
     const {id, model, price, year} = car;
-    const deleteCar = id => {
-        carService.deleteById(id);
+
+    const deleteCar = async (id) => {
+        try {
+            await carService.deleteById(id);
+            const delInfo = id
+            delTrigger(delInfo)
+        } catch (e) {
+
+        }
     }
+
     return (
         <div>
             <div className={css.car}>
