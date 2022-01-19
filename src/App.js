@@ -8,6 +8,7 @@ const App = () => {
     const [trigger, setTrigger] = useState(null);
     const createNewCar = data => {
         setTrigger(data)
+
     }
     const updateCar = data=>{
         setTrigger(data)
