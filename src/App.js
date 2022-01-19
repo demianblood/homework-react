@@ -2,6 +2,7 @@ import React from 'react';
 import {Routes, Route} from "react-router-dom";
 
 import css from './App.module.css'
+import {PhotosPage} from "./pages/PhotosPage/PhotosPage";
 
 const App = () => {
     return (
@@ -14,8 +15,10 @@ const App = () => {
                 <a href="/albums">Albums</a>
                 <a href="/photos">Photos</a>
                 <a href="/about">About</a>
-
             </div>
+            <Routes>
+                <Route path={'/'} element={}{<PhotosPage/>}/>
+            </Routes>
 
         </>
     );

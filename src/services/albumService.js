@@ -1,5 +1,5 @@
 import axios from "axios";
-import {urls} from "../../config/urls";
+import {urls} from "../config/urls";
 
 export const albumService = {
     getAll: () => axios.get(urls.albums).then(value => value.data),
