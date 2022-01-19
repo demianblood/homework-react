@@ -1,8 +1,9 @@
 import React from 'react';
 
-const  PhotosPage= () => {
+const PhotosPage = () => {
     return (
         <div>
+            PhotosPage
 
         </div>
     );
