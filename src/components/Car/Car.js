@@ -1,6 +1,4 @@
-import React, {useEffect, useState} from 'react';
 import css from "./Car.module.css"
-import UpdatedForm from "../Form/UpdatedForm";
 import {carService} from "../../services/carService";
 
 const Car = ({car}) => {
@@ -18,7 +16,7 @@ const Car = ({car}) => {
                     <div>year:{year}</div>
                 </div>
                 <div className={css.btnBox}>
-                    <button className={css.btn} onClick={deleteCar(id)}>delete this car</button>
+                    <button className={css.btn} onClick={() => deleteCar(id)}>delete this car</button>
                 </div>
             </div>
 
