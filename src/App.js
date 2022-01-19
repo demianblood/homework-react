@@ -5,15 +5,18 @@ import UpdatedForm from "./components/Form/UpdatedForm";
 import css from "./App.module.css"
 
 const App = () => {
-    let [trigger, setTrigger] = useState(null);
+    const [trigger, setTrigger] = useState(null);
     const createNewCar = data => {
+        setTrigger(data)
+    }
+    const updateCar = data=>{
         setTrigger(data)
     }
     return (
         <>
             <div className={css.forms}>
-                <Form update={createNewCar}/>
-                <UpdatedForm/>
+                <Form createNewCar={createNewCar}/>
+                <UpdatedForm updateCar={updateCar}/>
             </div>
             <Cars trigger={trigger}/>
         </>

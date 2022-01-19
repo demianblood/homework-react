@@ -4,7 +4,7 @@ import {carService} from "../../services/carService";
 const Car = ({car}) => {
     const {id, model, price, year} = car;
     const deleteCar = id => {
-        carService.deleteById(id)
+        carService.deleteById(id);
     }
     return (
         <div>

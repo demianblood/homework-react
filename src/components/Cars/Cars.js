@@ -3,12 +3,12 @@ import React, {useEffect, useState} from 'react';
 import {carService} from "../../services/carService";
 import Car from "../Car/Car";
 
-const Cars = ({trigger}) => {
-    let [cars, setCars] = useState([]);
+const Cars = (trigger) => {
+    const [cars, setCars] = useState([]);
 
     useEffect(() => {
         carService.getAll().then(value => setCars([...value]))
-    }, [trigger, cars]);
+    }, [trigger]);
 
     return (
         <div>

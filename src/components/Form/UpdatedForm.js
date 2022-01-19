@@ -4,13 +4,14 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {CarValidator} from "../../validators/CarValidator";
 import {carService} from "../../services/carService";
 
-const UpdatedForm = () => {
+const UpdatedForm = ({updateCar}) => {
     const {register, handleSubmit, formState: {errors}}
         = useForm({resolver: joiResolver(CarValidator), mode: 'onTouched'});
 
     const update = async (car) => {
         try {
-            await carService.updateById(car.id, car);
+            const update = await carService.updateById(car.id, car);
+            updateCar(update)
         } catch (error) {
 
         }
