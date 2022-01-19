@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {CarValidator} from "../../validators/CarValidator";
 import {carService} from "../../services/carService";
 
-const UpdatedForm = ({updateCarById}) => {
-    const [formError, setFormError] = useState([]);
-
+const UpdatedForm = () => {
     const {register, handleSubmit, formState: {errors}}
         = useForm({resolver: joiResolver(CarValidator), mode: 'onTouched'});
 
     const update = async (car) => {
         try {
-            const updateCar = await carService.updateById(car.id, car);
-            updateCarById(updateCar)
+            await carService.updateById(car.id, car);
         } catch (error) {
 
         }

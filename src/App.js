@@ -6,21 +6,16 @@ import css from "./App.module.css"
 
 const App = () => {
     let [trigger, setTrigger] = useState(null);
-    let [updateCar, setUpdateCar] = useState(null)
-
     const createNewCar = data => {
         setTrigger(data)
-    }
-    const updateCarById = data => {
-        setUpdateCar(data)
     }
     return (
         <>
             <div className={css.forms}>
                 <Form update={createNewCar}/>
-                <UpdatedForm updateCarById={updateCarById}/>
+                <UpdatedForm/>
             </div>
-            <Cars trigger={trigger} updateCar={updateCar}/>
+            <Cars trigger={trigger}/>
         </>
     );
 };
