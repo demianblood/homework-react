@@ -1,19 +1,16 @@
-import './App.css';
+import React from 'react';
+import {Route, Routes} from "react-router-dom";
+import {HomePage} from "./pages/HomePage/HomePage";
 
-import Comments from "./components/Comments/Comments";
-import Users from "./components/Users/Users";
-import Posts from "./components/Posts/Posts";
-
-function App() {
+const App = () => {
     return (
-        <div>
-            <div className='double-box'>
-                <Users/>
-                <Posts/>
-            </div>
-            <Comments className='comments'/>
-        </div>
-    );
-}
+        <>
+            <Routes>
+                <Route path={'/'} element={<HomePage/>}/>
+            </Routes>
 
-export default App;
+        </>
+    );
+};
+
+export {App};
