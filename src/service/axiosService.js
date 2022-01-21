@@ -1,6 +1,6 @@
-const axios = require("axios");
+import axios from "axios";
 
-const baseURL = require("../config/urls");
+import baseURL from "../config/urls"
 
 const axiosService = axios.create({baseURL});
 

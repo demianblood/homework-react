@@ -1,12 +1,12 @@
 import React from 'react';
 
-const HomePage = () => {
+const NotFoundPage = () => {
     return (
         <div>
-            HomePage
-            
+            NotFoundPage
+
         </div>
     );
 };
 
-export {HomePage};
+export {NotFoundPage};
