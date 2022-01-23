@@ -1,2 +1,5 @@
 export * from './axiosService'
 export * from './userService'
+export * from './postService'
+export * from './commentsService'
+export * from './albumsService'

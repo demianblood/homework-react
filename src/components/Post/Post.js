@@ -1,13 +1,16 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-const Post = ({post}) => {
-    const {userId, id, title, body} = post
+const Post = ({post, hover}) => {
+    const {userId, id, title} = post
     return (
         <div>
-            <h3>{userId}.{id} - {title}</h3>
-            <p>{body}</p>
-        </div>
+            <span>{userId}.{id} - {title} </span>
+            {!hover &&<Link to={id.toString()} state={{...post}}>
+                    <button>get details</button>
+                </Link>}
 
+        </div>
     );
 };
 
