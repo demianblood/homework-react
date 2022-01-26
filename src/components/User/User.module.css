@@ -1,9 +1,0 @@
-.user{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-.user__btn{
-    margin: 10px;
-}
-

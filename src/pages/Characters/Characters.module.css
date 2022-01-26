@@ -1,0 +1,23 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    background-image: url("https://weproject.media/upload/iblock/fd1/fd151402d4da84a663522ee98fabe7e0.jpg");
+    background-size: 100%;
+}
+
+.btnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1F1F43;
+}
+
+.btnBox button {
+    background-color: #99CA41;
+    border-radius: 20%;
+    margin-right: 20px;
+}

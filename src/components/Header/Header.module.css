@@ -1,0 +1,18 @@
+.btnBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30%;
+    position: absolute;
+    margin: 20px 30%;
+}
+
+.btn {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #99CA41;
+    color: #99CA41;
+    background-color: #1F1F43;
+    cursor: pointer;
+}

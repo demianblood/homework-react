@@ -1,0 +1,19 @@
+.characterBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #99CA41;
+    width: 300px;
+    background-color: #99CA41;
+    margin: 20px 0;
+}
+
+.image {
+    width: 300px;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
