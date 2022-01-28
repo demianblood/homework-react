@@ -3,26 +3,22 @@ import React, {useEffect, useState} from 'react';
 import {characterService} from "../../services/characterService";
 import {Character} from "../Character/Character";
 import css from './Characters.module.css'
+import {NotFoundPage} from "../NotFoundPage/NotFoundPage";
 
 const Characters = () => {
-    const [character, setCharacter] = useState([]);
+    const [characters, setCharacters] = useState([]);
     const [id, setId] = useState(1)
 
     useEffect(() => {
-        if (id < 1) {
-            setId(42)
-        }
-        if (id > 42) {
-            setId(1)
-        }
-        characterService.getAll(id).then(value => setCharacter(value));
+        characterService.getAll(id).then(value => setCharacters(value));
+
     }, [id])
     return (
         <div>{
             <div>
                 <div className={css.wrap}>
                     {
-                        character.map(value => <Character key={value.id} value={value}/>)
+                        characters && characters.map(character => <Character key={character.id} character={character}/>)
                     }
                 </div>
                 <div className={css.btnBox}>
