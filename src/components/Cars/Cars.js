@@ -5,16 +5,17 @@ import {Car} from "../Car/Car";
 import {getAllCars} from "../../store";
 
 const Cars = () => {
-    const {cars,status,error} = useSelector(state => state['carReducer']);
-    const dispatch=useDispatch();
+    const {cars, status, error} = useSelector(state => state['carReducer']);
+    const dispatch = useDispatch();
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getAllCars())
-    },[])
+    }, [])
 
     return (
         <div>
-            {status==="pending"&&<h1>Loading....</h1>}
+            {status === "pending" && <h1>Loading....</h1>}
+            {error && <h2>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
     );
