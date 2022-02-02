@@ -6,10 +6,10 @@ import css from './App.module.css'
 const App = () => {
   return (
         <>
-            {/*<div className={css.form}>*/}
-            {/*    <FormCar/>*/}
-            {/*</div>*/}
-            {/*<Cars/>*/}
+            <div className={css.form}>
+                <FormCar/>
+            </div>
+            <Cars/>
         </>
     );
 };
