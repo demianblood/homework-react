@@ -2,9 +2,10 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 
 import css from './Car.module.css'
-import {deleteCar, deleteCarThunk} from "../../store";
+import {deleteCar, setUpdatedCar, updateCar} from "../../store";
 
-const Car = ({car: {id, model, price, year}, getCarId}) => {
+const Car = ({car}) => {
+    const {id, model, price, year} = car
     const dispatch = useDispatch()
     return (
         <div className={css.carBox}>
@@ -13,8 +14,10 @@ const Car = ({car: {id, model, price, year}, getCarId}) => {
                 <div>Price:{price}</div>
                 <div>Year:{year}</div>
             </div>
-            <button onClick={()=>dispatch(deleteCar({id}))}>delete</button>
-            <button onClick={()=>dispatch(deleteCarThunk({id}))}>delete car Dispatch</button>
+            <div className={css.carBtn}>
+                <button onClick={() => dispatch(deleteCar({id}))}>delete</button>
+                <button onClick={() => dispatch(setUpdatedCar({car}))}>update</button>
+            </div>
         </div>
     );
 };

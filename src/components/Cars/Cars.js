@@ -5,9 +5,8 @@ import {Car} from "../Car/Car";
 import {getAllCars} from "../../store";
 
 const Cars = () => {
-    const {cars, status, error} = useSelector(state => state['carReducer']);
+    const {cars, status, error, updatedCar} = useSelector(state => state.cars);
     const dispatch = useDispatch();
-
     useEffect(() => {
         dispatch(getAllCars())
     }, [])
