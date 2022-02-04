@@ -4,7 +4,8 @@ import {carService} from "../service";
 const initialState = {
     cars: [],
     status: null,
-    error: null
+    error: null,
+    carForUpdate: null
 }
 
 export const getAllCars = createAsyncThunk(
@@ -30,10 +31,10 @@ export const createCar = createAsyncThunk(
 )
 export const updateCar = createAsyncThunk(
     'carSlice/updateCar',
-    async ({id}, {car}, {dispatch}) => {
+    async ({id, car}, {dispatch}) => {
         try {
-            const update = await carService.updateById({id}, {car})
-            dispatch(updCar({data: update}))
+            const update = await carService.updateById(id, car)
+            dispatch(updCar({id, car: update}))
         } catch (e) {
             console.log(e)
         }
@@ -44,7 +45,7 @@ export const deleteCarById = createAsyncThunk(
     async ({id}, {dispatch}) => {
         try {
             await carService.deleteById(id)
-            dispatch(deleteCar(id))
+            dispatch(deleteCar({id}))
         } catch (e) {
             console.log(e)
         }
@@ -59,10 +60,18 @@ const carSlice = createSlice({
             state.cars.push(action.payload.data)
         },
         updCar: (state, action) => {
-            state.cars.patch(action.payload.data)
+            const id = action.payload.id;
+            const index = state.cars.findIndex(car => car.id === id);
+            state.cars[index] = action.payload.car
+            state.carForUpdate = null;
+
         },
         deleteCar: (state, action) => {
             state.cars = state.cars.filter(car => car.id !== action.payload.id)
+        },
+        setCarForUpdate: (state, action) => {
+            const car = action.payload.car;
+            state.carForUpdate = car
         }
     },
     extraReducers: {
@@ -82,5 +91,5 @@ const carSlice = createSlice({
 });
 const carReducer = carSlice.reducer;
 
-export const {addCar, updCar, deleteCar} = carSlice.actions;
+export const {addCar, updCar, deleteCar, setCarForUpdate} = carSlice.actions;
 export default carReducer

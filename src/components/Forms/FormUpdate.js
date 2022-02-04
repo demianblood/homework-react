@@ -8,6 +8,7 @@ const FormUpdate = ({car}) => {
     const {handleSubmit, register, reset} = useForm();
     const dispatch = useDispatch();
     const update = (id,car) => {
+        updateCar(id,)
     }
 
     return (
