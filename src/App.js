@@ -1,15 +1,13 @@
 import React from 'react';
 
-import {Cars, FormCar} from "./components";
+import {Cars, Comments, FormCar, Posts, User, Users} from "./components";
 import css from './App.module.css'
 
 const App = () => {
-  return (
+    return (
         <>
-            <div className={css.form}>
-                <FormCar/>
-            </div>
-            <Cars/>
+            <Posts/>
+            <Comments/>
         </>
     );
 };

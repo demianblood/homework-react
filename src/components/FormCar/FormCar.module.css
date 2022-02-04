@@ -1,0 +1,13 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 20%;
+}
+.errorText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+}

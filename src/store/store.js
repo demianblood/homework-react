@@ -1,10 +1,16 @@
 import {configureStore} from "@reduxjs/toolkit";
+import carReducer from "./slice/car.slice";
+import userReducer from "./slice/userSlice";
+import postReducer from "./slice/postSlice";
+import commentReducer from "./slice/commentsSlice";
 
-import carReducer from "./slice/carSlice/car.slice";
 
 const store = configureStore({
     reducer: {
-        cars:carReducer
+        cars: carReducer,
+        users: userReducer,
+        posts: postReducer,
+        comments: commentReducer
     }
 });
 
