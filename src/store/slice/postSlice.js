@@ -24,11 +24,11 @@ const postSlice = createSlice({
     extraReducers:{
         [getAllPosts.pending]: (state, action) => {
             state.status = 'load'
-            state.users = action.payload
+            state.posts = action.payload
         },
         [getAllPosts.fulfilled]: (state, action) => {
             state.status = 'full'
-            state.users = action.payload
+            state.posts = action.payload
         },
         [getAllPosts.rejected]: (state, action) => {
             state.status = 'error'

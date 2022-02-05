@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Comment} from "../Comment/Comment";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllComments} from "../../store";
+import {getAllComments} from "../../../store";
 
 const Comments = () => {
     const {comments} = useSelector(state => state.comments);

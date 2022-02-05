@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getAllUsers} from "../../store";
+import {getAllUsers} from "../../../store";
 import {User} from "../User/User";
 
 const Users = () => {

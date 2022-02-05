@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 
 import css from './Car.module.css'
-import {deleteCar, setUpdatedCar, updateCar} from "../../store";
+import {deleteCar, setUpdatedCar} from "../../../store";
 
 const Car = ({car}) => {
     const {id, model, price, year} = car

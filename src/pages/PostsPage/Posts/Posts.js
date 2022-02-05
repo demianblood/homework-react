@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Post} from "../Post/Post";
 import {useDispatch, useSelector} from "react-redux";
-import {getAllPosts} from "../../store";
+import {getAllPosts} from "../../../store";
 
 const Posts = () => {
     const {posts} = useSelector(state => state.posts);

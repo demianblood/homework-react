@@ -21,19 +21,20 @@ const commentSlice = createSlice({
     name: 'commentSlice',
     initialState,
     reducers: {},
-    extraReducers:{
+    extraReducers: {
         [getAllComments.pending]: (state, action) => {
             state.status = 'loading'
-            state.users = action.payload
+            state.comments = action.payload
         },
         [getAllComments.fulfilled]: (state, action) => {
             state.status = 'fullFill'
-            state.users = action.payload
+            state.comments = action.payload
         },
         [getAllComments.rejected]: (state, action) => {
             state.status = 'error'
             state.error = action.payload
-        }}
+        }
+    }
 
 })
 const commentReducer = commentSlice.reducer;

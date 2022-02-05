@@ -1,13 +1,23 @@
 import React from 'react';
+import {Route, Routes} from "react-router-dom";
 
-import {Cars, Comments, FormCar, Posts, User, Users} from "./components";
-import css from './App.module.css'
+
+import {Comments, Posts, Users, Cars} from "./pages";
+import {Layout} from "./components";
+
 
 const App = () => {
     return (
         <>
-            <Posts/>
-            <Comments/>
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'users'} element={<Users/>}/>
+                    <Route path={'posts'} element={<Posts/>}/>
+                    <Route path={'comments'} element={<Comments/>}/>
+                    <Route path={'cars'} element={<Cars/>}/>
+                </Route>
+            </Routes>
+
         </>
     );
 };
